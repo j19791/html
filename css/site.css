@@ -1,0 +1,226 @@
+body {/*seletor*/
+	font-family: "Crimson Text", "Times New Roman", serif;/*regras: regra-valor*/
+	background-color: #F2FFFC;/*#f2 representa a porcentagem de vermelho 0-255 em hexa, ff - verde, fc - azul . (rgb)*/
+	font-size: 120%;/*20% maior que o tamanho da fonte padrão do navegador*/
+	line-height: 1.5;/*se a fonte tiver o tamanho de 20 pixels, a linha terá o tamanho de 30 pixels.*/
+}
+
+h1, h2 {/* regras podem ser compartilhadas entre os elementos da página*/
+	font-family: "Open Sans Condensed", "Arial", sans-serif;/*sem serifas - fonte alternativa*/
+}
+
+.titulo-principal {/*seletor de classes - pode repetir no html diferente do id - categoria de elementos - flexibilidade*/
+	text-align: center;
+	background-color: #851944;
+	color: #FFF;
+	text-transform: uppercase;
+	font-size: 300%; /*3x maior que a fonte do pai - main*/
+    padding: 2rem; /*200% maior que a fonte do pai*/
+    border-bottom: .5rem solid #000;/*150% maior que a fonte do html/navegador*/
+}
+
+p {
+	text-align: justify;
+	margin: 20px 0;
+}
+
+.citacao-bio {
+	background-color: #D9E5E3;
+	border: 10px solid #C2CCCA;
+	width: 250px;
+	box-sizing: border-box;/*estamos mudando a forma como o navegador mede a largura dos elementos. Por padrão, o navegador mede a largura ignorando padding e bordas (content-box). Border-box: deve considerar padding e bordas nesse cálculo. Então o elemento diminui pois agora os 250 px que definimos de largura incluem os paddings e bordas do elemento.*/
+	margin: 20px 40px;/*espaço ao redor- margem : 20 px acima e abaixo e 40px esquerda direita*/
+}
+
+.navegacao-site {
+	text-align: center;
+	background-color: #3C1D3D;
+	color: #F2FFFC;
+}
+
+.rodape-pagina {
+	background-color: #000;
+	color: #F2FFFC;
+	clear: both;/*nao permite elementos flutuantes em ambos os lados*/
+	position: fixed; /*elemento fica fixo na tela , não tem scroll*/
+	/*regras abaixo para manter o rodape fixo em baixa da página, ocupando toda largura da página*/
+	bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+main a {/*regras p/ os a que estão dentro de main*/
+	color: #851944;
+}
+
+.navegacao-site a {
+	color: inherit;/*o valor da regra vem do pai .navegacao-site*/
+	font-family: "Open Sans Condensed", sans-serif;
+}
+
+.citacao-bio, .navegacao-site, .rodape-pagina {
+    padding: 20px;/*espaçamento interno -  controla o espaço entre o conteúdo de um elemento e sua borda.*/
+}
+
+.container {
+	width: 720px;
+	margin: auto;
+	padding: 30px 0;
+}
+
+.navegacao-site h1 {
+	font-size: 30px;
+	margin-bottom: 25px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+.subtitulo-texto {
+	font-size: 30px;
+	clear: both;
+}
+
+.icones-redes-sociais li {
+	display: inline-block;/*fazermos com que os elementos <li> fiquem em linha, respeitando o tamanho das imagens dentro deles.*/
+	/*block - os elementos ficam empilhados, inline- ao lado*/
+}
+
+.artigo {
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+
+.leia-mais {
+	padding: 8px;
+	margin: 16px;
+	display: block;
+	font-size: 24px;
+	text-align: center;
+	background-color: #E6E7E8;
+}
+
+nav a {
+	text-transform: lowercase;
+}
+
+.icones-redes-sociais a {
+	width: 40px;/*definir tamanho do s deverá ser o mesmo do tamanho do icone*/
+	height: 40px;
+	display: block;
+	text-indent: -99999px;/*image replacement: sumir com o texto e incluir a imagem text-indent: permite regular o recuo da primeira linha de um parágrafo.*/
+}
+
+/*Se as imagens estão na página apenas porque representam visualmente o nome da rede social correspondente, deveríamos deixar o lado visual para o CSS, e deixar no HTML o nome da rede social,*/
+.github {
+	background-image: url('../img/github.png');
+}
+
+.twitter {
+	background-image: url('../img/twitter.png');
+}
+
+.linkedin {
+	background-image: url('../img/linkedin.png');
+}
+
+.fiat {
+	float: right;/*elemento flutua a direita*/
+}
+
+.petrobras {
+	float: left;
+}
+
+main {
+	float: left;
+	width: 85%;
+	padding-bottom: 80px; /*evitar que o conteúdo da página fique por trás do rodapé fixado*/
+}
+
+.minha-foto, .navegacao-site {
+	float: right;
+	box-sizing: border-box;
+	border-left: 10px solid black;
+	border-bottom: 10px solid black;
+}
+
+cite {
+	font-style: italic;
+	float: right;
+}
+
+.minha-foto{
+	position: absolute;/*o absolute é sempre relativo ao primeiro pai dele que possuir um position definido. Se não definirmos para o pai, o filho estará posicionado em relação à tela do navegador*/
+    top: 0;/*top right bottom left sempre trabalha junto com position*/
+    right: 0;
+}
+
+.navegacao-site {
+    width: 15%;
+    position: relative;/*mudar a posição do elemento (com top, left,right, bottom) de acordo com a posição original dele. (posição do fluxo) */
+    top: 310px;
+}
+
+/*#id - seletor de id*/
+
+/*
+medidas relativas
+
+em
+p {
+    font-size: 20px;
+    margin: 1em;
+}
+em - os parágrafos terão margem de 20 pixels.
+
+-----------------------
+rem
+html {
+    font-size: 25px;
+}
+
+p {
+    margin: 1rem;
+}
+Os parágrafos nesse exemplo terão 25 pixels de margem. se nao tiver especificado html, medida padrão do navegador
+
+------------------------
+ch - largura do caracter 0
+------------------------
+%
+ varia de acordo com a propriedade na qual é usada:;
+ font-size, é relativa ao tamanho de fonte do pai do elemento; 
+ margin, padding e width, é relativa à largura do pai do elemento;
+ height, é relativa à altura do pai do elemento.
+
+
+
+*/
+
+/*
+position: static (padrão)
+
+*/
+
+/*
+
+.botao {
+    -webkit-depth: 10px; funcionalidade beta no chrome
+    -moz-depth: 10px; funcionalidade beta no mozilla
+    depth: 10px; future proof - o naveg
+}
+
+div {
+    width: -webkit-calc(50% - 10px);
+    width: -moz-calc(50% - 10px);
+    width: calc(50% - 10px);
+}
+
+*/
